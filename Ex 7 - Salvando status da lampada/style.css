@@ -1,0 +1,34 @@
+body{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#lamp-image{
+    width: 300px;   
+}
+
+.section-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#turn-btn{
+    background-color: rgb(75, 74, 74);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgb(75, 74, 74);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s; ; 
+}
+
+#turn-btn:hover{
+    background-color: white; 
+    box-shadow: 1px 1px 5px white;
+    color: rgb(75, 74, 74); 
+}

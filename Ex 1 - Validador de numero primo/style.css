@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(26, 31, 29);
+    color: rgb(241, 238, 238);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    width: 600px;    
+}
+
+legend{
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+input{
+    background-color: rgb(98, 111, 116);
+    border: none;
+    border-radius: 5px;
+    color: rgb(241, 238, 238);
+    padding: 5px;
+}
+
+button{
+    background-color: rgb(98, 111, 116);
+    border: none;
+    border-radius: 5px;
+    color: rgb(241, 238, 238);
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s; 
+}
+
+button:hover{
+    background-color: rgb(241, 238, 238);
+    color: rgb(98, 111, 116);
+}
+
+::placeholder{
+    color: rgb(241, 238, 238);
+}
