@@ -1,0 +1,62 @@
+body{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+}
+header{
+    text-align: center;
+    border: 1px solid black;
+}
+section{
+    border: 1px solid black;
+    margin: 10px;
+}
+form{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+#col-right{
+    /* border: 1px solid black; */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;   
+}
+#col-left{
+    /* border: 1px solid black; */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+input, select{
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 176px;
+
+}
+button{
+    margin-top: 15px;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+section > header{
+    border: none;
+}
+
+table{
+    border: 1px solid black;
+    width: 100%;
+}
+th, td{
+    border: 1px solid black;
+    padding: 5px; 
+}
+
+fa-trash{
+    cursor: pointer;
+}
+
+
