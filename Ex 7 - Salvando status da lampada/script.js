@@ -10,7 +10,7 @@ function turnOnOff(){
         lampImage.setAttribute("src","images/luz-apagada.png");
     }
 
-    saveStatus()
+    saveStatus();
 }
 
 function saveStatus(){

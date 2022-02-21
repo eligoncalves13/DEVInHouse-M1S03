@@ -2,7 +2,7 @@ const formAddress = document.querySelector("#form-address");
 
 let count = 1;
 function addAddress(){
-    count++
+    count++;
     
     const newLabelAddress = document.createElement('label');
     newLabelAddress.innerText = "Endereço Completo "+count;

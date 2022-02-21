@@ -14,4 +14,7 @@ function numberValidator(){
         message.textContent = '';
     }
     document.querySelector('#number').value = '';
+
+    
+    
 }

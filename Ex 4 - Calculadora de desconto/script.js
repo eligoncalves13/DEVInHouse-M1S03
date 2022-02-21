@@ -11,12 +11,14 @@ function calculate(){
             const fullAmount = amount - discountAmount;
             console.log(fullAmount);
 
+            message.style.display = "block";
             message.innerHTML = `Valor Total: ${amount} <br> Valor do Desconto: ${discountAmount} <br> Valor Total com Desconto: ${fullAmount}`;
-        }else{
+        
+        } else { 
             window.alert("Digite um valor válido!");
             message.textContent = '';
     }  
-    }else{
+    } else {
         window.alert("Digite um valor válido!");
         message.textContent = '';
         }
