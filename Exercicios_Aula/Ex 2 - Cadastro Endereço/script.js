@@ -1,42 +1,57 @@
 let arrayList = [];
 
-document.addEventListener('DOMContentLoaded', getLocalStorage);
+const btn_save = document.querySelector('#btn_save');
 
+document.addEventListener('DOMContentLoaded', () => {
+    for (i in arrayList) {
+        createTable(arrayList[i]);
+      }
+});
+
+btn_save.addEventListener('click', saveForm);
+
+function setLocalStorage(arrayList){
+    localStorage.setItem('tableAddress', JSON.stringify(arrayList));
+}
+  
 function getLocalStorage(){
-    const storageList = localStorage.getItem('tableAddress');
-    if(storageList === null){
-        arrayList = [];                                     
-       }else{
-        arrayList = JSON.parse(storageList); 
-        for (i in arrayList) {
-            createTable(arrayList[i]);
-          }                  
-       }
-       return arrayList;
-    }
-
-function setLocalStorage(){                              
-    localStorage.setItem('tableAddress', JSON.stringify(arrayList));   
+    let storageList = localStorage.getItem('tableAddress');
+        storageList = JSON.parse(storageList); 
+       return storageList;
 }
 
-function save(e){
-       
-    const form = new Object();
-    form.name = document.querySelector('#name').value;
-    form.typeAddress = document.querySelector('#type-address').value;
-    form.address = document.querySelector('#address').value;
-    // form.trash = `<buttom><i class="fa fa-trash" aria-hidden="true"></i></buttom>`
-    console.log(form);
-    arrayList.push(form);
-    setLocalStorage();
-    createTable(form);
+let localStorageList = getLocalStorage();
+
+if(localStorageList.length > 0){
+    arrayList = localStorageList;
+}
+
+function saveForm() { 
+    let totalRegister = arrayList.length; 
+
+    const formRegister = new Object
+    formRegister.name = document.querySelector('#name').value;
+    formRegister.address = document.querySelector('#address').value;
+    formRegister.typeAddress = document.querySelector('#type-address').value;
+    formRegister.id = totalRegister;
+    formRegister.actions = `<i class='fas fa-trash' id='total-registros-${totalRegister}' onclick="deleteItem(${totalRegister})"> </i>`;
     
 
+    if (formRegister.typeAddress === 'Residencial') {
+        const icon = '<i class="fa fa-home"></i> ';
+        formRegister.typeAddress = icon + formRegister.typeAddress;
+
+    } else {
+        const icon = '<i class="fa fa-building"></i> ';
+        formRegister.typeAddress = icon + formRegister.typeAddress;
+    }
+
+    arrayList.push(formRegister);
+    createTable(formRegister);
+    setLocalStorage(arrayList);
 }
 
-function createTable(arrayList){
-
-    // Object.keys(arrayList).forEach(function(element, index){
+function createTable(arrayList) {
     const tbody = document.querySelector('#tbody');
 
     const tr = document.createElement('tr');
@@ -54,23 +69,17 @@ function createTable(arrayList){
     tdTypeAddress.innerHTML = arrayList.typeAddress;
     tr.appendChild(tdTypeAddress);
 
+    const tdActions = document.createElement('td')
+    tdActions.innerHTML = arrayList.actions;
+    tr.appendChild(tdActions);
     
-        var tdTrash = document.createElement('td');
-        tdTrash.innerHTML =  `<buttom><i class="fas fa-trash" aria-hidden="true"></i></buttom>`
-        tdTrash.setAttribute('onclick', deleteRow(this))
-        tr.appendChild(tdTrash);
-        tbody.appendChild(tr);
-        
-//   })  
-    
-   
+    tbody.appendChild(tr);
 }
 
-
-function deleteRow(index){
-    console.log('clicou');
-    // const storageList = localStorage.getItem('tableAddress');
-    // arrayList = JSON.parse(storageList) 
-    // arrayList.splice(index, 1) 
-    // localStorage.setItem('tableAddress', JSON.stringify(arrayList));  
-}
+function deleteItem(index){
+    const trDelete = document.getElementById(index);
+    trDelete.remove();
+    arrayList = JSON.parse(localStorage.getItem('tableAddress'));
+    arrayList.splice(index -1, 1);
+    localStorage.setItem('tableAddress', JSON.stringify(arrayList));
+  }
