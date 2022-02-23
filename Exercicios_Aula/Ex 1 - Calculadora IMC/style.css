@@ -1,44 +1,55 @@
-body{
-    background-color: rgb(26, 31, 29);
-    color: rgb(241, 238, 238);
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    background-color: rgb(33, 38, 39);
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans', sans-serif;
     margin: 0 auto;
     width: 350px;    
 }
 
-legend{
+fieldset {
+    border: 2px solid rgb(255, 255, 255);  
+}
+
+fieldset legend {
     font-size: 25px;
     text-align: center;
     text-transform: uppercase;
     padding: 10px;
 }
 
-form{
+form {
     text-align: center;
 }
 
-input{
-    background-color: rgb(98, 111, 116);
+input {
+    background-color: rgb(121, 136, 141);
     border: none;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px rgb(108, 127, 134);
-    color: rgb(241, 238, 238);
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    margin: 5px auto;
     padding: 5px;
     display: block;
-    margin: 5px auto;
 }
 
-button{
-    background-color: rgb(98, 111, 116);
+button {
+    background-color: rgb(121, 136, 141);
     border: none;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px rgb(108, 127, 134);
-    color: rgb(241, 238, 238);
-    padding: 5px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;  
+    font-family: 'Open Sans', sans-serif;  
     margin: 10px;
-    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s; 
+}
+
+button:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(121, 136, 141);
 }
 
 ::placeholder{
-    color: rgb(241, 238, 238);
+    color: rgb(255, 255, 255);
 }

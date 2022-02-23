@@ -1,4 +1,4 @@
-const lampImage = document.querySelector("#lamp-image");
+const lampImage = document.querySelector("#lamp_image");
 
 let statusLamp = false;
 
@@ -6,7 +6,7 @@ function turnOnOff(){
     statusLamp = !statusLamp;
     if(statusLamp == true){
         lampImage.setAttribute("src","images/luz-acesa.png");
-    }else{
+    } else {
         lampImage.setAttribute("src","images/luz-apagada.png");
     }
 }

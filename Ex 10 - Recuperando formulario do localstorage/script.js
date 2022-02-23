@@ -18,17 +18,20 @@ function setLocalStorage(){
     localStorage.setItem('tableData', JSON.stringify(arrayList));   
 }
 
-function save(){
+function saveForm(){
     const form = new Object();
     form.name = document.querySelector('#name').value;
-    form.lastName = document.querySelector('#last-name').value;
+    form.lastName = document.querySelector('#last_name').value;
     form.email = document.querySelector('#email').value;
-    form.phoneNumber = document.querySelector('#phone-number').value;
+    form.phoneNumber = document.querySelector('#phone_number').value;
     form.address = document.querySelector('#address').value;
-    console.log(form);
-    arrayList.push(form);
-    setLocalStorage();
-    createTable(form);
+    if(form.name != "" && form.lastName != "" && form.email != "" && form.phoneNumber != "" && form.address != ""){
+        arrayList.push(form);
+        setLocalStorage();
+        createTable(form);
+    } else {
+        alert("Informe todos os dados!");
+    }
 }
 
 function createTable(arrayList){
@@ -57,22 +60,3 @@ function createTable(arrayList){
 
     tbody.appendChild(tr);
 }
-
-//Adicionar novos endereços
-//let contador = 1;
-// function addAddress(){
-//     contador++
-    
-//     const newLabelAddress = document.createElement('label');
-//     newLabelAddress.innerText = "Endereço Completo "+contador;
-//     newLabelAddress.setAttribute("for","address");
-//     formAddress.appendChild(newLabelAddress);
-
-//     const newInputAddress = document.createElement('input');
-//     newInputAddress.setAttribute("type","text");
-//     newInputAddress.id = "address"+contador;
-//     newInputAddress.setAttribute("placeholder","Insira seu endereço");
-
-
-//     formAddress.appendChild(newInputAddress);
-// }

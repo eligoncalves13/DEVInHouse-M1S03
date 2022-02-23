@@ -19,8 +19,8 @@ function setLocalStorage(){
     localStorage.setItem('tableAddress', JSON.stringify(arrayList));   
 }
 
-function save(){
-    
+function save(e){
+       
     const form = new Object();
     form.name = document.querySelector('#name').value;
     form.typeAddress = document.querySelector('#type-address').value;
@@ -30,11 +30,17 @@ function save(){
     arrayList.push(form);
     setLocalStorage();
     createTable(form);
+    
+
 }
 
 function createTable(arrayList){
+
+    // Object.keys(arrayList).forEach(function(element, index){
     const tbody = document.querySelector('#tbody');
+
     const tr = document.createElement('tr');
+    tr.id = arrayList.id;
 
     const tdName = document.createElement('td');
     tdName.innerHTML = arrayList.name;
@@ -48,21 +54,23 @@ function createTable(arrayList){
     tdTypeAddress.innerHTML = arrayList.typeAddress;
     tr.appendChild(tdTypeAddress);
 
-    arrayList.forEach(function(element, index){
-        const tdTrash = document.createElement('td');
-        tdTrash.innerHTML =  `<buttom><i class="fas fa-trash" aria-hidden="true"></i></buttom>`
-        tdTrash.setAttribute('onclick', deleteRow(index))
-    })
     
-    tr.appendChild(tdTrash);
-
-    tbody.appendChild(tr);
+        var tdTrash = document.createElement('td');
+        tdTrash.innerHTML =  `<buttom><i class="fas fa-trash" aria-hidden="true"></i></buttom>`
+        tdTrash.setAttribute('onclick', deleteRow(this))
+        tr.appendChild(tdTrash);
+        tbody.appendChild(tr);
+        
+//   })  
+    
+   
 }
 
-function deleteRow(index){
-    const storageList = localStorage.getItem('tableAddress');
-    arrayList = JSON.parse(storageList) 
-    arrayList.splice(test, 1) 
-    localStorage.setItem('tableAddress', JSON.stringify(arrayList));   
 
+function deleteRow(index){
+    console.log('clicou');
+    // const storageList = localStorage.getItem('tableAddress');
+    // arrayList = JSON.parse(storageList) 
+    // arrayList.splice(index, 1) 
+    // localStorage.setItem('tableAddress', JSON.stringify(arrayList));  
 }

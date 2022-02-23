@@ -1,34 +1,38 @@
-body{
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
     background-color: black;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
-#lamp-image{
+#lamp_image {
     width: 300px;   
 }
 
-.section-btn{
+.section_btn {
+    margin-top: 10px;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
 }
 
-#turn-btn{
+.turn_btn {
     background-color: rgb(75, 74, 74);
     border: none;
     border-radius: 10px;
-    box-shadow: 1px 1px 5px rgb(75, 74, 74);
     color: white;
     cursor: pointer;
     padding: 10px;
     transition: all 0.3s; ; 
 }
 
-#turn-btn:hover{
+.turn_btn:hover {
     background-color: white; 
-    box-shadow: 1px 1px 5px white;
     color: rgb(75, 74, 74); 
 }

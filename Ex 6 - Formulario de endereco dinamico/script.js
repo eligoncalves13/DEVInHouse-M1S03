@@ -1,17 +1,13 @@
-const formAddress = document.querySelector("#form-address");
+const formAddress = document.querySelector("#form_address");
 
 let count = 1;
 function addAddress(){
     count++;
-    
-    const newLabelAddress = document.createElement('label');
-    newLabelAddress.innerText = "Endereço Completo "+count;
-    newLabelAddress.setAttribute("for","address");
-    formAddress.appendChild(newLabelAddress);
 
-    const newInputAddress = document.createElement('input');
-    newInputAddress.setAttribute("type","text");
-    newInputAddress.id = "address"+count;
+    const newAddress = document.createElement('input');
+    newAddress.setAttribute("type","text");
+    newAddress.setAttribute("placeholder", "Endereço Completo " +count);
+    newAddress.id = "address" +count;
 
-    formAddress.appendChild(newInputAddress);
+    formAddress.appendChild(newAddress);
 }
