@@ -9,34 +9,35 @@
     <script defer src="script.js"></script>
     <title>Cadastro de Endereço</title>
 </head>
-<body >
-    <header>
-        <h2>Cadastro de Endereços</h2>
-    </header>
-    <section>
+<body>
+    <main class="register_container"> 
+        <header>
+            <h2>Cadastro de Endereços</h2>
+        </header>
+         <section class="form_container">
         <form>
-            <div id="col-right">
+            <div class="col_right">
                 <label for="name">Nome:</label>
                 <select name="select" id="name" autofocus>
-                    <option selected>Mária</option>
+                    <option selected>Maria</option>
                     <option>João</option>
                     <option>Ana</option>
                     <option>José</option>
                 </select>
-                <label for="type-address">Residencial/Comercial:</label>
-                <select name="select" id="type-address">
+                <label for="type_address">Residencial/Comercial:</label>
+                <select name="select" id="type_address">
                     <option selected>Residencial</option>
                     <option>Comercial</option>
                 </select>
             </div>
-            <div id="col-left">
+            <div class="col_left">
                 <label for="address">Endereço</label>
                 <input name="address" type="text" id="address">
                 <button type="button" id="btn_save" >Gravar</button>
             </div>
         </form>
     </section>
-    <section>
+    <section class="table_container">
         <header>
             <h2>Lista de Endereço</h2>
         </header>
@@ -53,7 +54,7 @@
 
             </tbody>
         </table>
-
     </section>
+    </main>   
 </body>
 </html>

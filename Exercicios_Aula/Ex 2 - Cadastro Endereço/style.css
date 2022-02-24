@@ -1,62 +1,102 @@
-body{
+* {
     box-sizing: border-box;
-    width: 100%;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
 }
-header{
-    text-align: center;
-    border: 1px solid black;
-}
-section{
-    border: 1px solid black;
-    margin: 10px;
-}
-form{
-    margin-top: 10px;
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;  
+    width: 100vw; 
     display: flex;
+    justify-content: center;
+}
+
+.register_container {
+    margin-top: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column; 
+}
+
+.register_container header {
+    background-color: rgb(191, 207, 207);
+    padding: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.register_container form {
+    display: flex;
+    align-items: flex-start;
     justify-content: space-around;
     
 }
-#col-right{
-    /* border: 1px solid black; */
+.register_container .col_right, .col_left  {
     padding: 10px;
     display: flex;
     flex-direction: column;   
 }
-#col-left{
-    /* border: 1px solid black; */
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-}
-input, select{
-    margin-bottom: 20px;
+
+.register_container input, select {
+    border: 1px solid rgb(73, 73, 73);
     border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 15px;
+    outline: none;
     padding: 5px;
     width: 176px;
 
 }
-button{
-    margin-top: 15px;
-    border-radius: 5px;
-    padding: 5px;
-    cursor: pointer;
-}
-section > header{
+.register_container button {
+    background-color: rgb(191, 207, 207);
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 25px;
+    outline: none;
+    padding: 5px;
+    width: 176px;
 }
 
-table{
-    border: 1px solid black;
+.table_container table {
     width: 100%;
 }
-th, td{
-    border: 1px solid black;
-    padding: 5px; 
+
+.table_container th {
+    background-color: rgb(191, 207, 207);
+    padding: 5px;
+    text-align: center; 
 }
 
-fa-trash{
+.table_container td {
+    border-bottom: 1px solid rgb(191, 207, 207);
+    padding: 5px;
+    text-align: center; 
+}
+
+.table_container  .fas {
+    color:rgb(76, 92, 92);
+}
+
+.table_container  .fa-trash {
     cursor: pointer;
 }
 
+@media only screen and (max-width: 768px) {
+    .register_container {
+        width: 100%;
+    }
 
+    .register_container form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+    .table_container {
+        overflow: scroll;
+    }
+}

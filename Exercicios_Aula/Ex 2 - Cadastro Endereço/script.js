@@ -3,7 +3,7 @@ let arrayList = [];
 const btn_save = document.querySelector('#btn_save');
 
 document.addEventListener('DOMContentLoaded', () => {
-    for (i in arrayList) {
+    for(i in arrayList) {
         createTable(arrayList[i]);
       }
 });
@@ -22,7 +22,7 @@ function getLocalStorage(){
 
 let localStorageList = getLocalStorage();
 
-if(localStorageList.length > 0){
+if(localStorageList.length > 0) {
     arrayList = localStorageList;
 }
 
@@ -32,17 +32,17 @@ function saveForm() {
     const formRegister = new Object
     formRegister.name = document.querySelector('#name').value;
     formRegister.address = document.querySelector('#address').value;
-    formRegister.typeAddress = document.querySelector('#type-address').value;
+    formRegister.typeAddress = document.querySelector('#type_address').value;
     formRegister.id = totalRegister;
-    formRegister.actions = `<i class='fas fa-trash' id='total-registros-${totalRegister}' onclick="deleteItem(${totalRegister})"> </i>`;
+    formRegister.actions = `<i class='fas fa-trash' id='total_register_${totalRegister}' onclick="deleteItem(${totalRegister})"> </i>`;
     
 
     if (formRegister.typeAddress === 'Residencial') {
-        const icon = '<i class="fa fa-home"></i> ';
+        const icon = '<i class="fas fa-home"></i> ';
         formRegister.typeAddress = icon + formRegister.typeAddress;
 
     } else {
-        const icon = '<i class="fa fa-building"></i> ';
+        const icon = '<i class="fas fa-building"></i> ';
         formRegister.typeAddress = icon + formRegister.typeAddress;
     }
 
